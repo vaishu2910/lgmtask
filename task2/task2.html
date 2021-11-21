@@ -1,0 +1,194 @@
+<DOCTYPE html>
+<html>
+<head><title>LGM task2</title></head>
+<style>
+	
+body{
+	display:lock;
+    font-family: sans-serif;
+    background-color: skyblue;
+    }
+
+.container
+{
+	position: relative;
+	height: 600px;
+	left: 0px;
+}
+.logo{
+	height: 120px;
+	width: 120px;
+	float: left;
+	margin-top: 5px;
+	margin-left: 10px;
+}
+.heder
+{
+	height: 140px;
+	width: 100%;
+	background-size: 300px;
+	background-repeat: no-repeat;
+	border-bottom: 2px solid #fafdfc ;
+	padding-top: 50px;
+	font-size: 100px;
+	color: goldenrod;
+	flex: 1 1 40rem;
+	font-size: 80px;
+	color: #fff;
+	text-align: center;
+	-webkit-animation: glow ls ease-in-out infinite alternate;
+	-moz-animation: glow ls ease-in-out infinite alternate;
+	animation: glow ls ease-in-out infinite alternate;
+}
+.btn{
+	position: :absolute;
+	top: 45px;
+	right: 40px;
+}
+button{
+	color: black;
+	height: 35px;
+	width: 100px;
+	border-radius: 10px;
+	background-color: aqua;
+}
+#data{
+	width: 99%;
+	height: 450px;
+	text-align: right;
+	justify-content: center;
+	display: flex;
+}
+.table{
+	width: 800px;
+}
+table{
+	color: rgb(243, 118, 16);
+	font-size: 18px;
+	font-family: sans-serif;
+	font: 700;
+}
+
+table tr:hover{
+	background-color: lightgray;
+}
+img{
+	clip-path: circle();
+	
+}
+.welcome{
+	font-family:sans-serif;
+	color: rgb(81,68,87);
+	padding-top: 120px;
+}
+</style>
+<body>
+	<div class="container">
+		<div class="glow">
+			<div class="heder">
+				<img src="unnamed.jpg" class="logo" height="100%" width="100%">
+				<div align="center">Team Letsgrowmore</div>
+				<div align="right" class="btn"><button id="getdata" align="center" onclick="getData()">GET USER</button></div>
+			</div>
+		</div>
+		<div id="data">
+			<div class="table">
+				<table width="100%"height="490px">
+					<tr align="center">
+						<a href="#"><td><img src="" class="hov" id="p1img"></td></a>
+						<a href="#"><td><img src="" class="hov" id="p2img"></td></a>
+						<a href="#"><td><img src="" class="hov" id="p3img"></td></a>
+					</tr>
+					<tr>
+						<td align="center" id="name1"></td>
+						<td align="center" id="name2"></td>
+						<td align="center" id="name3"></td>
+					</tr>
+					<tr>
+						<td align="center" id="mail1"></td>
+						<td align="center" id="mail2"></td>
+						<td align="center" id="mail3"></td>
+					</tr>
+					<tr align="center">
+						<a href="#"><td><img src="" class="hov" id="p4img"></td></a>
+						<a href="#"><td><img src="" class="hov" id="p5img"></td></a>
+						<a href="#"><td><img src="" class="hov" id="p6img"></td></a>
+					</tr>
+					<tr>
+						<td align="center" id="name4"></td>
+						<td align="center" id="name5"></td>
+						<td align="center" id="name6"></td>
+					</tr>
+					<tr>
+						<td align="center" id="mail4"></td>
+						<td align="center" id="mail5"></td>
+						<td align="center" id="mail6"></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+	<div class="welcome"><marquee width="100%" direction="left" height="100px">LGM virtual internship program 2020-21</marquee></div>
+</body>
+<script>
+	console.log('INFINITY TEAM API');
+	function getData(a)
+	{
+		url="https://reqres.in/api/users?page=1";
+		fetch(url).then((response)=>{
+			return response.json();
+		}).then((data)=>{
+			console.log(data);
+			var value=data;
+			var img1=(value['data'][0]['avatar']);
+			document.getElementById('p1img').src=img1;
+			var img2=(value['data'][1]['avatar']);
+			document.getElementById('p2img').src=img2;
+			var img3=(value['data'][2]['avatar']);
+			document.getElementById('p3img').src=img3;
+			var img3=(value['data'][3]['avatar']);
+			document.getElementById('p4img').src=img3;
+			var img3=(value['data'][4]['avatar']);
+			document.getElementById('p5img').src=img3;
+			var img3=(value['data'][5]['avatar']);
+			document.getElementById('p6img').src=img3;
+
+			////name
+			var first1=(value['data'][0]['first_name']);
+			var last1=(value['data'][0]['last_name']);
+			document.getElementById('name1').innerHTML="first1"+""+"last1";
+			var first1=(value['data'][1]['first_name']);
+			var last1=(value['data'][1]['last_name']);
+			document.getElementById('name2').innerHTML="first1"+""+"last1"
+			var first1=(value['data'][2]['first_name']);
+			var last1=(value['data'][2]['last_name']);
+			document.getElementById('name3').innerHTML="first1"+""+"last1"
+			var first1=(value['data'][3]['first_name']);
+			var last1=(value['data'][3]['last_name']);
+			document.getElementById('name4').innerHTML="first1"+""+"last1"
+			var first1=(value['data'][4]['first_name']);
+			var last1=(value['data'][4]['last_name']);
+			document.getElementById('name5').innerHTML="first1"+""+"last1"
+			var first1=(value['data'][5]['first_name']);
+			var last1=(value['data'][5]['last_name']);
+			document.getElementById('name6').innerHTML="first1"+""+"last1"
+
+			/////mail
+			var mail1=(value['data'][0]['mail']);
+			document.getElementById('mail1').innerHTML="mail1";
+			var mail2=(value['data'][1]['mail']);
+			document.getElementById('mail2').innerHTML="mail2";
+			var mail3=(value['data'][2]['mail']);
+			document.getElementById('mail3').innerHTML="mail3";
+			var mail3=(value['data'][3]['mail']);
+			document.getElementById('mail4').innerHTML="mail3";
+			var mail3=(value['data'][4]['mail']);
+			document.getElementById('mail5').innerHTML="mail3";
+			var mail3=(value['data'][5]['mail']);
+			document.getElementById('mail6').innerHTML="mail3";
+
+		})
+	}
+
+</script>
+<html>

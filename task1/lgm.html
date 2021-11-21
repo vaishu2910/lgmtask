@@ -1,0 +1,190 @@
+<html>
+<head>
+<title></title>
+</head>
+<style>
+	.body{
+		background-color: burlywood;
+	}
+	.lgm p{
+		font-family: cursive;
+		text-align: center;
+		text-shadow: skyblue;
+		font-size: 70px;
+		margin-left: 2%;
+		margin-top: 4%;
+	}
+	.middle{
+	
+    	padding: 3%;
+}
+.slideshow-container {
+  max-width: 80%;
+  position: relative;
+  margin: auto;
+  margin-top: 30px;
+}
+.myslide{
+	display: none;
+}
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+.active,.dot:hover{
+	background-color: #717171;
+}
+.fade{
+	-webkit-animation-name: fade;
+	-webkit-animation-duration: 1.5s;
+	animation-name: fade;
+	animation-duration: 1.5s;
+}
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+
+.wrapper{
+		
+		padding: 1%;
+		width: 80%;
+		margin: 0 auto;
+		
+}
+.about p{
+	font-family: cursive;
+	font-size: 40px;
+	text-align: center;
+}
+</style>
+<body class="body">
+<div class="lgm">
+	<p>LGM VIRTUAL INTERNSHIP PROGRAM 2021 </p>
+	
+</div>
+
+<div>
+	<div class="middle">
+	<div class="slideshow-container">
+
+<div class="mySlides fade">
+  <div class="numbertext">1 / 4</div>
+  <img src="first.jpg" style="width:100%">
+  <div class="text"></div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 4</div>
+  <img src="second.jpg" style="width:100%">
+  <div class="text"></div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">3 / 4</div>
+  <img src="third.jpg" style="width:100%">
+  <div class="text"></div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">4 / 4</div>
+  <img src="fourth.jpg" style="width:100%">
+  <div class="text"></div>
+</div>
+<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+</div>
+<br>
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+  <span class="dot" onclick="currentSlide(4)"></span> 
+</div>
+</div>
+
+	
+</div>
+<div class="About">
+	<p>About LGM:- LetsGrowMore is a ground-based organisation that aims at building the future through nourishing the present. We at LetsGrowMore believe in making our youth especially the students self-aware and exploring the untouched world of technology and tremendous growth-making fields and our belief finally took us where we are standing today. Today we are an officially MSME registered start-up with nearly 100+ people working under the same establishment.</p>
+
+</div>
+
+</body>
+
+<script type="text/javascript">
+	var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+
+</script>	
+</html>
